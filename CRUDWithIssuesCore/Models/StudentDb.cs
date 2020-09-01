@@ -7,10 +7,10 @@ namespace CRUDWithIssuesCore.Models
 {
     public static class StudentDb
     {
-        public static Student Add(Student p, SchoolContext db)
+        public static Student Add(Student p, SchoolContext context)
         {
             //Add student to context
-            db.Students.Add(p);
+            context.Students.Add(p);
             return p;
         }
 
