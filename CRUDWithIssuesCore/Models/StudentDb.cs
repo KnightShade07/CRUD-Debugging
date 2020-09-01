@@ -12,6 +12,9 @@ namespace CRUDWithIssuesCore.Models
         {
             //Add student to context
             context.Students.Add(s);
+
+            //Save the database changes
+            context.SaveChanges();
             return s;
         }
 
