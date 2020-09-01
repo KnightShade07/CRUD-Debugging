@@ -33,7 +33,7 @@ namespace CRUDWithIssuesCore.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Add(s, context);
-                ViewData["Message"] = $"{s.Name} was added!";
+                TempData["Message"] = $"{s.Name} was added!";
                 return RedirectToAction("Students");
             }
 
@@ -56,7 +56,7 @@ namespace CRUDWithIssuesCore.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Update(context, s);
-                ViewData["Message"] = "The Student was updated!";
+                TempData["Message"] = "The Student was updated successfully!";
                 return RedirectToAction("Students");
             }
             //return view with errors
