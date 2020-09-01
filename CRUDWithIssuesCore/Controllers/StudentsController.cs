@@ -16,7 +16,7 @@ namespace CRUDWithIssuesCore.Controllers
             context = dbContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Students()
         {
             List<Student> students = StudentDb.GetStudents(context);
             return View(students);
