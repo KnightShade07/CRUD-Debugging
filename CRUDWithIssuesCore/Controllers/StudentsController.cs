@@ -40,7 +40,7 @@ namespace CRUDWithIssuesCore.Controllers
             //Show web page with errors
             return View(s);
         }
-
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             //get the student by id
@@ -56,7 +56,7 @@ namespace CRUDWithIssuesCore.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Update(context, s);
-                ViewData["Message"] = "Product Updated!";
+                ViewData["Message"] = "The Student was updated!";
                 return RedirectToAction("Students");
             }
             //return view with errors

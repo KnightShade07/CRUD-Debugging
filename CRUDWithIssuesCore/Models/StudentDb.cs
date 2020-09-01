@@ -36,7 +36,6 @@ namespace CRUDWithIssuesCore.Models
         public static void Delete(SchoolContext context, Student s)
         {
 
-
             //Mark the object as deleted
             context.Entry(s).State = EntityState.Deleted;
 
