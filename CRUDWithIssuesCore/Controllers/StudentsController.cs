@@ -43,11 +43,11 @@ namespace CRUDWithIssuesCore.Controllers
 
         public IActionResult Edit(int id)
         {
-            //get the product by id
+            //get the student by id
             Student s = StudentDb.GetStudent(context, id);
 
-            //show it on web page
-            return View();
+            //show the student on the web page
+            return View(s);
         }
 
         [HttpPost]
@@ -72,7 +72,7 @@ namespace CRUDWithIssuesCore.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int id)
         {
-            //Get Product from database
+            //Get the student to be deleted from the database.
             Student s = StudentDb.GetStudent(context, id);
 
             StudentDb.Delete(context, s);
