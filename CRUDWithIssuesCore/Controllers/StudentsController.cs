@@ -79,5 +79,13 @@ namespace CRUDWithIssuesCore.Controllers
 
             return RedirectToAction("Students");
         }
+
+        //The details IActionResult was missing from the original project.
+        public IActionResult Details(int id)
+        {
+            //Get the student to be displayed on the page
+             Student s = StudentDb.GetStudent(context, id);
+            return View(s);
+        }
     }
 }
