@@ -34,7 +34,7 @@ namespace CRUDWithIssuesCore.Controllers
             {
                 StudentDb.Add(s, context);
                 ViewData["Message"] = $"{s.Name} was added!";
-                return View();
+                return RedirectToAction("Students");
             }
 
             //Show web page with errors
