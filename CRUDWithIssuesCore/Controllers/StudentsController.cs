@@ -62,7 +62,7 @@ namespace CRUDWithIssuesCore.Controllers
             //return view with errors
             return View(s);
         }
-
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             Student s = StudentDb.GetStudent(context, id);
@@ -77,7 +77,7 @@ namespace CRUDWithIssuesCore.Controllers
 
             StudentDb.Delete(context, s);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Students");
         }
     }
 }
