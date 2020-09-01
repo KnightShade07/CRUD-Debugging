@@ -57,7 +57,7 @@ namespace CRUDWithIssuesCore.Controllers
             {
                 StudentDb.Update(context, s);
                 ViewData["Message"] = "Product Updated!";
-                return View(s);
+                return RedirectToAction("Students");
             }
             //return view with errors
             return View(s);

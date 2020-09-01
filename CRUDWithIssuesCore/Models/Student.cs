@@ -12,7 +12,7 @@ namespace CRUDWithIssuesCore.Models
         {
 
         }
-
+        [Key]
         public int StudentId { get; set; }
 
         public string Name { get; set; }
