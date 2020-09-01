@@ -33,14 +33,14 @@ namespace CRUDWithIssuesCore.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Add(s, context);
-                ViewData["Message"] = $"{s.Name} was added!";
+                TempData["Message"] = $"{s.Name} was added!";
                 return RedirectToAction("Students");
             }
 
             //Show web page with errors
             return View(s);
         }
-
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             //get the student by id
@@ -56,7 +56,7 @@ namespace CRUDWithIssuesCore.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Update(context, s);
-                ViewData["Message"] = "Product Updated!";
+                TempData["Message"] = "The Student was updated successfully!";
                 return RedirectToAction("Students");
             }
             //return view with errors
