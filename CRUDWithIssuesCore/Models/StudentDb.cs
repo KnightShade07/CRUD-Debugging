@@ -48,8 +48,6 @@ namespace CRUDWithIssuesCore.Models
         {
             context.Entry(s).State = EntityState.Modified;
             context.SaveChanges();
-
-            return View();
         }
     }
 }
