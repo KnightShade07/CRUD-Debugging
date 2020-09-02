@@ -48,7 +48,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  id=item.StudentId }) 
                 @Html.ActionLink("Details", "Details", new {  id=item.StudentId }) 
-                @Html.ActionLink("Delete", "Delete", new {  id=item.StudentId  })
+                @Html.ActionLink("Delete", "Delete", new {  id=item.StudentId  })@*PrimaryKey is NOT an actual property,
+                                                                                     instead, use the ID object that you created.*@
             </td>
         </tr>
 }
