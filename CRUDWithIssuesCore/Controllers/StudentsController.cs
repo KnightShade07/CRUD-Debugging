@@ -32,8 +32,11 @@ namespace CRUDWithIssuesCore.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Add the student to the DB
                 StudentDb.Add(s, context);
                 TempData["Message"] = $"{s.Name} was added!";
+                //Redirects the user to the students page
+                //after a student is added
                 return RedirectToAction("Students");
             }
 
@@ -55,7 +58,10 @@ namespace CRUDWithIssuesCore.Controllers
         {
             if (ModelState.IsValid)
             {
+                //updates a student in the database.
                 StudentDb.Update(context, s);
+                //use TempData instead of ViewData here,
+                //because the message will not display, otherwise
                 TempData["Message"] = "The Student was updated successfully!";
                 return RedirectToAction("Students");
             }
@@ -74,7 +80,7 @@ namespace CRUDWithIssuesCore.Controllers
         {
             //Get the student to be deleted from the database.
             Student s = StudentDb.GetStudent(context, id);
-
+            //Delete the student from the Database.
             StudentDb.Delete(context, s);
 
             return RedirectToAction("Students");
@@ -83,6 +89,7 @@ namespace CRUDWithIssuesCore.Controllers
         //The details IActionResult was missing from the original project.
         public IActionResult Details(int id)
         {
+            //This view is readonly.
             //Get the student to be displayed on the page
              Student s = StudentDb.GetStudent(context, id);
             return View(s);
